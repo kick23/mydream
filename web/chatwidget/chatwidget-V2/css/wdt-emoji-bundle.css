@@ -11,13 +11,7 @@ body[data-wdt-emoji-bundle='google'] .wdt-emoji[data-has-img-google='false'], bo
 }
 .wdt-emoji-picker span.emoji-outer.emoji-sizer {
   pointer-events: none;
-}
-/* bundle popup styles */
-.wdt-emoji-popup {
-	position: absolute;
-	bottom:145px;
-	right:26px;
-	visibility: hidden;
+
 	width: 380px;
 	max-width:98%;
 	height: 310px;

@@ -1,0 +1,55 @@
+.imichatmsgpreview,
+.imichatmsgpreview body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.imichatmsgpreview body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;  
+  height: auto;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  padding-top: 30px;
+}
+.imichatmsgpreview .imichatpreview-msg-clearbtn{
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 800;
+}
+.imichatmsgpreview .msg {
+    color: #fff;
+    font-family: sans-serif;
+    max-width: 300px;
+    min-width: 60px;
+    width: auto;
+    float: right;
+    max-height: 65px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .imichatmsgpreview .msg::after, 
+  .imichatmsgpreview .msg::before {
+    position: absolute;
+    bottom: -16px;
+    right: 20px;
+    left: auto;
+    margin: auto;
+    height: 1px;
+    width: 1px;
+    border-width: 10px;
+  }
+

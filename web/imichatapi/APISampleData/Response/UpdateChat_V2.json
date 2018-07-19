@@ -1,0 +1,33 @@
+﻿{
+    "chat_id": "15412512",
+    "alias_id": "t8568568568",
+    "created_at": "2018-04-08T10:32:55.433",
+    "updated_at": "2018-04-08T13:40:44.697",
+    "channel": "sms",
+    "status": "queued",
+    "assignee": "malli",
+    "tags": [
+      "test1"
+    ],
+    "asset": {
+      "id": "",
+      "name": ""
+    },
+    "customer": {
+      "id": "2323332333",
+      "name": "",
+      "destination_id": "2323332333"
+    },
+    "messages": [
+      {
+        "type": "outbound",
+        "text": "23",
+        "attachment": null,
+        "timestamp": "2018-04-07T18:24:23.29",
+        "signature": {
+          "sender": "SYSTEM"
+        }
+      }
+    ],
+    "other_details": {}
+}

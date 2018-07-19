@@ -1,0 +1,75 @@
+﻿{
+  "condition": "OR",
+  "rules": [
+    {
+      "condition": "OR",
+      "rules": [
+        {
+          "param_name": "customer_id",
+          "operator": "eq",
+          "param_value": "338125548592"
+        },
+        {
+          "param_name": "customer_id",
+          "operator": "eq",
+          "param_value": "338125554740"
+        }
+      ]
+    },
+    {
+      "condition": "AND",
+      "rules": [
+        {
+          "param_name": "tag",
+          "operator": "eq",
+          "param_value": "Tag Name"
+        },
+        {
+          "param_name": "created_at",
+          "operator": "lt",
+          "param_value": "2018-04-02T05:36:20.319Z"
+        },
+        {
+          "param_name": "updated_at",
+          "operator": "gt",
+          "param_value": "2018-04-02T05:36:20.319Z"
+        },
+        {
+          "condition": "AND",
+          "rules": [
+            {
+              "param_name": "status",
+              "operator": "eq",
+              "param_value": "picked"
+            },
+            {
+              "param_name": "status",
+              "operator": "eq",
+              "param_value": "closed"
+            }
+          ]
+        },
+        {
+          "condition": "OR",
+          "rules": [
+            {
+              "param_name": "channel",
+              "operator": "eq",
+              "param_value": "sms"
+            },
+            {
+              "param_name": "channel",
+              "operator": "eq",
+              "param_value": "facebook"
+            },
+            {
+              "param_name": "channel",
+              "operator": "eq",
+              "param_value": "livechat"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

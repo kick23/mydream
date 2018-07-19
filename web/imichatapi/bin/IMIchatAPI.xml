@@ -1,0 +1,1671 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IMIchatAPI</name>
+    </assembly>
+    <members>
+        <member name="T:IMIchatAPI.AuthorizationStatus">
+            <summary>
+            For Authorization Status
+            </summary>
+        </member>
+        <member name="T:IMIchatAPI.Authentication">
+            <summary>
+            For Authentication
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Authentication.CheckAuthorize(APIResponse@,IMIChat.Classes.MessageProp@,System.String)">
+            <summary>
+            For checking  request authorize
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Authentication.AuthenticateUser(System.String,System.String,System.String,APIResponse@,System.Data.DataTable@,IMIChat.Classes.MessageProp@,System.String)">
+            <summary>
+            Autheticate the user with authkey and apimethod
+            </summary>
+            <param name="authKey"></param>
+            <param name="domain"></param>
+            <param name="apimethod"></param>
+            <param name="apiResp"></param>
+            <param name="dtTeamInfo"></param>
+            <param name="msgProp"></param>
+            <param name="hostName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.Authentication.GenerateToken(System.String,System.String,System.String,System.Int32@)">
+            <summary>
+             Function to generate unique token with expiry against the provided key.
+             Also add a record in database for generated token.
+            </summary>
+            <param name="key"></param>
+            <param name="hostName"></param>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.Authentication.ValidateToken(System.String,System.String,System.String,System.Data.DataTable@,APIResponse@,IMIChat.Classes.MessageProp@)">
+            <summary>
+             Function to validate token against expiry time set in db and hostname
+            </summary>
+            <param name="token"></param>
+            <param name="hostName"></param>
+            <param name="apimethod"></param>
+            <param name="dtTeamInfo"></param>
+            <param name="apiResp"></param>
+            <param name="msgProp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.Authentication.GetRestrictedAPIAccessIPS(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iGroupID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.Authentication.HasIPRange(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="restrictedIPS"></param>
+            <param name="sIP"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IMIchatAPI.APIChatInfo">
+            <summary>
+            business logic for chat actions
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.SendMessage(System.String,MOMessageList,TeamInfo)">
+            <summary>
+            for appending MO messages
+            </summary>
+            <param name="chatid"></param>
+            <param name="msgList"></param>
+            <param name="teaminfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.UpdateStatus(ChatStatusResponse,TeamInfo)">
+            <summary>
+            updating chat status
+            </summary>
+            <param name="chatstatus"></param>
+            <param name="teaminfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.CreateChat(CreateChat,TeamInfo)">
+            <summary>
+            for creating chat
+            </summary>
+            <param name="createInfo"></param>
+            <param name="teaminfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.SaveMT(System.Int32,System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.Data.DataTable,System.String,System.Collections.Generic.List{APIAttachment})">
+            <summary>
+            for saving MT messages
+            </summary>
+            <param name="teamId"></param>
+            <param name="usergroupid"></param>
+            <param name="agentId"></param>
+            <param name="channel"></param>
+            <param name="localchatID"></param>
+            <param name="senderId"></param>
+            <param name="caseId"></param>
+            <param name="mobileNum"></param>
+            <param name="message"></param>
+            <param name="msgtype"></param>
+            <param name="datereq"></param>
+            <param name="dtTeamMeta"></param>
+            <param name="agentname"></param>
+            <param name="attachmentList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.DeleteChatId(System.Int64)">
+            <summary>
+            to delete chat
+            </summary>
+            <param name="chatid"></param>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.ValidateMessage(MOMessageList,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            for validating messages
+            </summary>
+            <param name="msgList"></param>
+            <param name="teamid"></param>
+            <param name="channelId"></param>
+            <param name="eType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.ValidateMOMTMessage(System.Collections.Generic.List{MOMTmessage},System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            for valiadting MO,MT messages
+            </summary>
+            <param name="msgList"></param>
+            <param name="teamid"></param>
+            <param name="channelId"></param>
+            <param name="eType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.ValidateCustomerId(System.String,System.Int32,System.Int32)">
+            <summary>
+            for validating customerid
+            </summary>
+            <param name="customerId"></param>
+            <param name="TeamId"></param>
+            <param name="userGroupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.ValidateTeamChannelCheck(System.Int32,System.Int32)">
+            <summary>
+            for channel check for team
+            </summary>
+            <param name="iTeamId"></param>
+            <param name="iChannelId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.GetConversation(System.String,TeamInfo)">
+            <summary>
+            get conversation list based on chatid
+            </summary>
+            <param name="chatID"></param>
+            <param name="teaminfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.GetConversation(System.String,System.String,TeamInfo)">
+            <summary>
+            get conversation based on cahnnel and userid
+            </summary>
+            <param name="channel"></param>
+            <param name="userid"></param>
+            <param name="teaminfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.GetAttachments(System.Data.DataSet,ChatMessages,System.Int32,ChatMessages@)">
+            <summary>
+            For getting attachments for MO,MT
+            </summary>
+            <param name="ds"></param>
+            <param name="cMsg"></param>
+            <param name="i"></param>
+            <param name="cMsgAttachment"></param>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.GetConversationsList(TeamInfo)">
+            <summary>
+            Provides the list of active chats
+            </summary>
+            <param name="teaminfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIChatInfo.GetTimeZonebyTeamid(System.Int32)">
+             <summary>
+            TO GET TIMEZONE FOR THE TEAM
+             </summary>
+             <param name="iTeamId"></param>
+             <returns></returns>
+        </member>
+        <member name="T:IMIchatAPI.APICommon">
+            <summary>
+            common class for output response
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.APICommon.SetFail(APIResponse@,System.Int32,System.Int32,System.String)">
+            <summary>
+            Set the Fail Message
+            </summary>
+            <param name="apiResp"></param>
+            <param name="messageCode"></param>
+            <param name="httpStatusCode"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:IMIchatAPI.APICommon.SetSuccess(APIResponse@,IMIChat.Classes.MessageProp,System.Object)">
+            <summary>
+            Set the Success Message
+            </summary>
+            <param name="apiResp"></param>
+            <param name="msgProp"></param>
+            <param name="respObj"></param>
+        </member>
+        <member name="T:IMIchatAPI.APICommon`1">
+            <summary>
+            Class for API common response
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:IMIchatAPI.APICommon`1.SetResponse(System.String,System.Int32,System.String,`0)">
+            <summary>
+            Sets the final reponse of EndPoints
+            </summary>
+            <param name="messageCode"></param>
+            <param name="httpStatusCode"></param>
+            <param name="message"></param>
+            <param name="respGeneric"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IMIchatAPI.APIProfileInfo">
+            <summary>
+            class for API Profile
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.APIProfileInfo.CreateProfile(ChatProfile,System.String)">
+            <summary>
+            create profile for webchat
+            </summary>
+            <param name="chtCust"></param>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIProfileInfo.GetWidgetStyles(System.String)">
+            <summary>
+            To get webchat widget styles
+            </summary>
+            <param name="appId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIProfileInfo.RefreshCache">
+            <summary>
+            For Refreshing cache webchat allowed domains from widget
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APIProfileInfo.GetWCPreviousHistory(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="teamAppId"></param>
+            <param name="appId"></param>
+            <param name="email"></param>
+            <param name="browserID"></param>
+            <param name="thread"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IMIchatAPI.APITeamInfo">
+            <summary>
+            For Team info for chat engine integration
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.APITeamInfo.ValidateIntegrationDetails(Validate)">
+            <summary>
+            validating team authkey and url
+            </summary>
+            <param name="validate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APITeamInfo.SaveIntegrationDetails(Save)">
+            <summary>
+            saving integration details and chatengine rules in db
+            keys('CONNECT_INTEGRATIONID','CONNECT_NAME','CONNECT_IMICHATURL','CONNECT_TEAMSECRET')
+            </summary>
+            <param name="save"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.APITeamInfo.DeleteIntegrationDetails(Delete)">
+            <summary>
+            deleting integration details,chatengine rules in db
+            </summary>
+            <param name="delete"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IMIchatAPI.SqlChatApiActions">
+            <summary>
+            data layer for asql actions
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetCustomerInfo(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            to get customer info
+            </summary>
+            <param name="formPostData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APICheckCaseID(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            to check case id
+            </summary>
+            <param name="formPostData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APICheckGetCustomerInfo(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            to check customerinfo
+            </summary>
+            <param name="formPostData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.CheckGetCustomerInfo(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            to check and get customerinfo
+            </summary>
+            <param name="formPostData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APIInsertCustomerProfile(System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Int32,System.String@,System.String@)">
+            <summary>
+            Add customer profile info
+            </summary>
+            <param name="formPostData"></param>
+            <param name="loginId"></param>
+            <param name="status"></param>
+            <param name="chatId"></param>
+            <param name="convId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APICheckSocialID(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            check asset/social id
+            </summary>
+            <param name="formPostData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APICreateCase(System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Int32,System.String@,System.String@)">
+            <summary>
+            to create chat/case
+            </summary>
+            <param name="formPostData"></param>
+            <param name="loginId"></param>
+            <param name="status"></param>
+            <param name="chatId"></param>
+            <param name="convId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APIInsertUploadUserDetails(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            To insert extra paarameters /data for the chat
+            </summary>
+            <param name="teamid"></param>
+            <param name="chatid"></param>
+            <param name="parmid"></param>
+            <param name="uploadValue"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.SendMessage(ChatMO)">
+            <summary>
+            to add MT message
+            </summary>
+            <param name="momsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetChatInfo(System.String,System.Int32,System.Int32@)">
+            <summary>
+            To get chat info
+            </summary>
+            <param name="chatid"></param>
+            <param name="Teamid"></param>
+            <param name="iRes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.UpdateChatStatus(System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            To update chat status
+            </summary>
+            <param name="chatid"></param>
+            <param name="teamid"></param>
+            <param name="status"></param>
+            <param name="iRes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APICheckChannelId(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Int32@,System.String@)">
+            <summary>
+            tocheck  channel
+            </summary>
+            <param name="usergroupid"></param>
+            <param name="teamid"></param>
+            <param name="pageid"></param>
+            <param name="channel"></param>
+            <param name="account"></param>
+            <param name="cname"></param>
+            <param name="iRes"></param>
+            <param name="acid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetWebchatInfo(System.String)">
+            <summary>
+            to get webchat info
+            </summary>
+            <param name="appid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetWebChatTeamList">
+            <summary>
+            To get webchat channel enabled teamlist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APIGetUserGroupMetaData(System.Int32)">
+            <summary>
+            to get group metadata
+            </summary>
+            <param name="userGrpid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.ValidateIntegrationDetails(System.String,System.String,System.Int32@)">
+            <summary>
+            To chek api key for chat engine
+            </summary>
+            <param name="key"></param>
+            <param name="url"></param>
+            <param name="iRes"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.SaveIntegrationDetails(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32@,System.Int32@)">
+            <summary>
+            save integration details
+            </summary>
+            <param name="teamKey"></param>
+            <param name="integrationId"></param>
+            <param name="name"></param>
+            <param name="imiChatUrl"></param>
+            <param name="teamsecret"></param>
+            <param name="cemturl"></param>
+            <param name="updatedby"></param>
+            <param name="iRes"></param>
+            <param name="iResTeamId"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.DeleteIntegrationDetails(System.String,System.Int32@)">
+            <summary>
+            to delete chat egnigne integration for the team
+            </summary>
+            <param name="integnId"></param>
+            <param name="iRes"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APIGetTeamDetails(System.String)">
+            <summary>
+            To get team details
+            </summary>
+            <param name="integrationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.InsertAttachments(System.Int64,System.String,System.String,System.String,System.Decimal,System.Int32)">
+            <summary>
+            To insert attachment
+            </summary>
+            <param name="historyid"></param>
+            <param name="fileName"></param>
+            <param name="contType"></param>
+            <param name="path"></param>
+            <param name="fileSize"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.InsertAttachmentCount(System.Decimal,System.Int32)">
+            <summary>
+            to insert attachment count
+            </summary>
+            <param name="historyid"></param>
+            <param name="attCount"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APIInsertChatMetaData(System.String,System.String,System.String)">
+            <summary>
+            to insert chat metadata
+            </summary>
+            <param name="chatid"></param>
+            <param name="parmid"></param>
+            <param name="parmvalue"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.AddIntegrationRules(System.Int32,System.String,System.Int32,System.Int32,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32@)">
+            <summary>
+            to add event/rules when team is integrated with chat engine
+            </summary>
+            <param name="iTeamId"></param>
+            <param name="name"></param>
+            <param name="eventRuleType"></param>
+            <param name="ruleTypeId"></param>
+            <param name="condText"></param>
+            <param name="userId"></param>
+            <param name="ParmsData"></param>
+            <param name="iRes"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.AddIntegrationParamater(System.Int32,System.String,System.String,System.String,System.String,System.Int32@)">
+            <summary>
+            to add event/rules parameters when team is integrated with chat engine
+            </summary>
+            <param name="eventruleid"></param>
+            <param name="paramtype"></param>
+            <param name="paramname"></param>
+            <param name="paramvalue"></param>
+            <param name="lastupdate"></param>
+            <param name="iRes"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetWidgetStyles(System.String)">
+            <summary>
+            to get widget sytles
+            </summary>
+            <param name="appid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetConversion(System.Int32,System.Int32)">
+            <summary>
+            To get  conversation list
+            </summary>
+            <param name="groupId"></param>
+            <param name="teamId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetChatHistoryList(System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            to get chat conversation list
+            </summary>
+            <param name="convid"></param>
+            <param name="teamid"></param>
+            <param name="groupid"></param>
+            <param name="iRes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APIGetUserGroupTimezone(System.Int32)">
+            <summary>
+            to group timezone
+            </summary>
+            <param name="iTeamId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.APICheckAssigneeExists(System.Int32,System.String,System.String@,System.String@)">
+            <summary>
+            to check if agent exists
+            </summary>
+            <param name="iGroupID"></param>
+            <param name="assignee"></param>
+            <param name="loginid"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.CheckAssigneeRole(System.Int32,System.Int32,System.String,System.String@)">
+            <summary>
+            to check if agent is accepting chats or not and is role
+            </summary>
+            <param name="iGroupID"></param>
+            <param name="teamid"></param>
+            <param name="loginid"></param>
+            <param name="isacceptchats"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.GetWidgetTimezone(System.String)">
+            <summary>
+            To Get Widget Timezone
+            </summary>
+            <param name="apppId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlChatApiActions.SaveMTMO_API(IMIChat.Classes.ConvHistory@,IMIChat.Classes.ConvInfo,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            save conversation in chat history
+            </summary>
+            <param name="mtparam"></param>
+            <param name="ci"></param>
+            <param name="strPushTo"></param>
+            <param name="teamId"></param>
+            <param name="istmpledited"></param>
+            <param name="status"></param>
+        </member>
+        <member name="M:IMIchatAPI.SqlWebRTCActions.GetAvailableAgentDetails(System.Int32,System.Nullable{System.Int32}@,System.String@)">
+            <summary>
+                  Get the assigned agent details, if available.
+            </summary>
+            <param name="teamid">The team identifier.</param>
+            <param name="agentId">The agent identifier.</param>
+            <param name="loginId">The agent login identifier.</param>
+            <returns>The assigned agent details.</returns>
+        </member>
+        <member name="M:IMIchatAPI.SqlWebRTCActions.ResetAgent(System.Int32,System.String)">
+            <summary>
+            Resets the agent webrtc token
+            </summary>
+            <param name="teamid"></param>
+            <param name="loginId"></param>
+        </member>
+        <member name="T:IMIchatAPI.SwaggerIgnoreFilter">
+            <summary>
+                Filtering scheme for swagger ignoring legacy properties.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.SwaggerIgnoreFilter.Apply(Swashbuckle.Swagger.Schema,Swashbuckle.Swagger.SchemaRegistry,System.Type)">
+            <summary>
+                Apply the filter.
+            </summary>
+            <param name="schema"></param>
+            <param name="schemaRegistry"></param>
+            <param name="type"></param>
+        </member>
+        <member name="T:IMIchatAPI.SwaggerOperationFilter">
+            <summary>
+                Customize swagger documentation.
+            </summary>
+        </member>
+        <member name="T:IMIchatAPI.Controllers.APIInternalController">
+            <summary>
+                Contains the API to be used inside IMI Mobile only.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.APIInternalController.#ctor(IMIChat.Contract.IAPIInternalRepository)">
+            <summary>
+                API Internal controller constructor.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.APIInternalController.ProcessForgetCustomerRequest(IMIChat.Model.FCMetaInfo)">
+            <summary>
+             Initiate FC request.
+            </summary>
+            <param name="fcMetaInfo">Customer meta details object.</param>
+        </member>
+        <member name="T:IMIchatAPI.AuthenticationController">
+            <summary>
+            In order to access any of the API endpoints, an access token would be required.
+            <br>An access token needs to be obtained by making a call to the Authorize endpoint. Click on the endpoint below to view sample request and response formats.</br>
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.AuthenticationController.Authorize">
+            <summary>
+            Authenticate and authorizes the user to acess the api methods
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.AuthenticationController.GetAuthToken(System.String,System.String,System.String)">
+            <summary>
+            TO GET AUTHTOKEN
+            </summary>
+            <param name="key"></param>
+            <param name="hostName"></param>
+            <param name="domain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.CreateChat(CreateChat)">
+            <summary>
+            Creates the newchat for all channels
+            </summary>
+            <param name="chat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.Conversation(System.String,MOMessageList)">
+            <summary>
+            Updates the chat history particular chatid
+            </summary>
+            <param name="chatid">chatid to append the messages</param>
+            <param name="messages">mo/mt array to append the history</param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.GetConversations">
+            <summary>
+            Provides the active chats of the team
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.GetConversations(System.String)">
+            <summary>
+            Provide the particular chat history of the chatid
+            </summary>
+            <param name="chatid">chatid of the conversation</param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.GetConversations(System.String,System.String)">
+            <summary>
+            Provides the active chat history of the channel and user identifier
+            </summary>
+            <param name="channel">channel of the case</param>
+            <param name="userid">customer identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.UpdateStatus(System.String,ChatStatusResponse)">
+            <summary>
+            Update the status of the particular chat
+            </summary>
+            <param name="chatid">chatid to update the status</param>
+            <param name="chatstatus">archived/closed need to be provided</param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.CreateChat_V2(IMIChat.Model.Chat)">
+            <summary>
+                Create Chat
+            </summary>
+            <remarks>Create chat</remarks>
+            <returns>
+               Created Chat deatils
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.GetChats_V2(IMIChat.Model.PagingReq)">
+            <summary>
+                Get chats
+            </summary>
+            <remarks>
+                Get list of chats.
+            </remarks>
+            <param name="pagingReq">The page no information.</param>
+            <remarks>Get list of chats.</remarks>
+            <returns>
+                Return list of chats.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.GetChats_Search_V2(System.Object,IMIChat.Model.PagingReq)">
+            <summary>
+                Search chats
+            </summary>
+            <remarks>
+                Search chats based on different filtration criteria.
+            </remarks>
+            <param name="pagingReq">The page no information.</param>
+            <param name="query">Filtration query</param>
+            <remarks>Gets the list of chats based on different filtration criteria.</remarks>
+            <returns>
+                List of chats based on the search criteria.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.UpdateChat_V2(System.String,IMIChat.Model.UpdateChatDetails)">
+            <summary>
+                Update Chat
+            </summary>
+            <remarks>This endpoint allows you to update details of an existing chat.
+            Note: Atleast one parameter is mandatory.
+               </remarks>
+            <returns>
+              This endpoint allows you to update details of an existing chat.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.AppendMessages_V2(System.String,System.Collections.Generic.List{IMIChat.Model.ChatMessage})">
+            <summary>
+                Append Message to chat
+            </summary>
+            <remarks>This endpoint allows you to append new messages (inbound/outbound/announcements) onto an existing chat: </remarks>
+            <returns>
+              This endpoint allows you to append new messages (inbound/outbound/announcements) onto an existing chat:
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatsController.GetChat_V2(System.String)">
+            <summary>
+                Get chat
+            </summary>
+            <remarks>Get detailed information of the chat.</remarks>
+            <param name="chatId">Unique identifier of a chat.</param>
+            <returns>
+                Chat details.
+            </returns>
+        </member>
+        <member name="T:IMIchatAPI.ChatInternalController">
+            <summary>
+            for chat related actions/endpoints
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.ChatInternalController.CreateChatInternal(CreateChat)">
+            <summary>
+            Method for internal purpose
+            </summary>
+            <param name="chat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ChatInternalController.ConversationInternal(System.String,MOMessageList)">
+            <summary>
+            Method for Internal purpose
+            </summary>
+            <param name="id"></param>
+            <param name="messages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ConnectController.Validate(Validate)">
+            <summary>
+            validates team authkey and url
+            </summary>
+            <param name="validate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ConnectController.Save(Save)">
+            <summary>
+            saving integration details
+            </summary>
+            <param name="save"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ConnectController.Delete(Delete)">
+            <summary>
+             deleting integration details
+            </summary>
+            <param name="delete"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ErrorController.NotFoundActions">
+            <summary>
+            Handles all methods which are not available
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:IMIchatAPI.ProfileController">
+            <summary>
+            for webchat related endpoints
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.#ctor(IMIChat.Contract.IAPIInternalRepository)">
+            <summary>
+                API Internal controller constructor.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.create">
+            <summary>
+            Creates the profile of user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.RefreshCache">
+            <summary>
+            Refreshes the cache
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.Validate">
+            <summary>
+            validates the domain and team
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.GetTypingIndicator">
+            <summary>
+            Sending typing indicator Event to chat console.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.GetWCPreviousHistory">
+            <summary>
+            for Getting webchat history based on Unique browser ID and customer name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.GetWCChatThreeads">
+            <summary>
+            for Getting webchat history based on Unique browser ID and customer name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.ProfileController.UpdateSurveyData(System.String,System.String,System.String,System.Collections.Generic.List{IMIChat.Model.SurveyFieldData})">
+            <summary>
+                Update survey field.
+            </summary>
+        </member>
+        <member name="T:IMIchatAPI.Controllers.UsersController">
+            <summary>
+                Agent controller.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.#ctor(IMIChat.Contract.IUserRepository)">
+            <summary>
+                User controller constructor.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.PostAgent(IMIChat.Model.AgentPostParams)">
+            <summary>
+               Create user
+            </summary>
+            <remarks>Create a user with provided inputs.</remarks>
+            <param name="agentDetails">The user input parameters.</param>
+            <returns>
+                Created user details.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.PutAgent(System.Int32,IMIChat.Model.AgentPutParams)">
+            <summary>
+                Update user
+            </summary>
+            <remarks>Update user details with provided inputs.</remarks>
+            <param name="id">The user identifier.</param>
+            <param name="agentDetails">The user input parameters.</param>
+            <returns>
+                Updated status code with no content.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.PutAgent_V2(System.Int32,IMIChat.Model.AgentPutParams)">
+            <summary>
+                Update user
+            </summary>
+            <remarks>Update user details with provided inputs.</remarks>
+            <param name="id">The user identifier.</param>
+            <param name="agentDetails">The user input parameters.</param>
+            <returns>
+                Updated status code with no content.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.GetAgent(System.Int32)">
+            <summary>
+                Get user
+            </summary>
+            <remarks>Get user detailed information.</remarks>
+            <param name="id">The user identifier.</param>
+            <returns>
+                User details.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.GetAgents(System.Nullable{System.Boolean},System.String)">
+            <summary>
+                Get users
+            </summary>
+            <remarks>Gets the list of users based on different filtration criteria.</remarks>
+            <returns>
+                List of users.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.PostAgent_V2(IMIChat.Model.AgentPostParams)">
+            <summary>
+               Create user
+            </summary>
+            <remarks>Create a user with provided inputs.</remarks>
+            <param name="userDetails">The user input parameters.</param>
+            <returns>
+                Created user details.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.GetAgent_V2(System.Int32)">
+            <summary>
+                Get user
+            </summary>
+            <remarks>Get user detailed information.</remarks>
+            <param name="id">The user identifier.</param>
+            <returns>
+                User details.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.GetAgents_V2(IMIChat.Model.PagingReq)">
+            <summary>
+                Get users
+            </summary>
+            <remarks>Gets the list of users.</remarks>
+            <returns>
+                List of users.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.UsersController.GetAgents_Search_V2(System.Object,IMIChat.Model.PagingReq)">
+            <summary>
+                Search users
+            </summary>
+            <remarks>
+            Search user based on different filtration criteria.
+            </remarks>
+            <param name="pagingReq">The page no information.</param>
+            <param name="query">Filtration query</param>
+            <remarks>Gets the list of users based on different filtration criteria.</remarks>
+            <returns>
+                List of users based on the search criteria.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.WebRTCController.GetAvailableAgent">
+            <summary>
+                Get the next available agent, for having video chat conversion.
+            </summary>
+            <returns>
+                Agent details with Ok Http status code, if agent available to accept the the video call.
+                NotFound Http status code, if agent details not available.
+            </returns>
+        </member>
+        <member name="M:IMIchatAPI.Controllers.WebRTCController.ResetLoginAgent(System.String)">
+            <summary>
+            Resets the webrtc of the agent passed
+            </summary>
+            <param name="loginId">Example:sreekar</param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIchatAPI.IMIChatExceptionHandler.Handle(System.Web.Http.ExceptionHandling.ExceptionHandlerContext)">
+            <summary>
+                Handle uncaught exceptions.
+            </summary>
+        </member>
+        <member name="T:IMIchatAPI.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.Resources.DefaultUrlScheme">
+            <summary>
+              Looks up a localized string similar to https.
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.Resources.PageParam">
+            <summary>
+              Looks up a localized string similar to page.
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.Resources.TeamInfoKey">
+            <summary>
+              Looks up a localized string similar to teaminfo.
+            </summary>
+        </member>
+        <member name="F:IMIchatAPI.Swagger.Index.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:IMIchatAPI.Utils.ApiExtensions">
+            <summary>
+                API extension method container.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Utils.ApiExtensions.Response``1(System.Net.Http.HttpRequestMessage,System.String,``0)">
+            <summary>
+                Generate Valid response message.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Utils.ApiExtensions.BadRequestResult(System.Net.Http.HttpRequestMessage,System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+                Generate BadRequet API error response.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Utils.ApiExtensions.ErrorResult(System.Net.Http.HttpRequestMessage,System.String,System.String[])">
+            <summary>
+                Generate  API error response.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Utils.ApiExtensions.ErrorResult(System.Net.Http.HttpRequestMessage,System.String,System.Exception,System.Web.Http.ModelBinding.ModelStateDictionary,System.String[])">
+            <summary>
+                Generate  API error response.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Utils.ApiExtensions.GetTeamInfo(System.Net.Http.HttpRequestMessage)">
+            <summary>
+                Get team info object.
+            </summary>
+        </member>
+        <member name="T:IMIchatAPI.ElmahHandleErrorApiAttribute">
+            <summary>
+            ASP.NET Web API exception filter for logging errors to ELMAH. This
+            assumes an HttpContext is present (i.e., running under ASP.NET - it
+            will not work as a self-hosted WCF application).
+            </summary>
+            <remarks>
+            Original implementation from http://stackoverflow.com/questions/766610/how-to-get-elmah-to-work-with-asp-net-mvc-handleerror-attribute/779961#779961.
+            Ported from the Elmah.Contrib.Mvc package on NuGet.
+            </remarks>
+        </member>
+        <member name="T:IMIchatAPI.ApiAuthenticationFilter">
+            <summary>
+            Custom Authentication Filter Extending basic Authentication
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.ApiAuthenticationFilter.OnAuthorization(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Checks basic authentication request
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:IMIchatAPI.ApiAuthenticationFilter.FetchAuthHeader(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Checks for authorization header in the request and parses it, creates user credentials and returns as BasicAuthenticationIdentity
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:IMIchatAPI.ApiAuthenticationFilter.SetErrorResponse(System.Web.Http.Controllers.HttpActionContext,APIResponse,IMIChat.Classes.MessageProp)">
+            <summary>
+             Send the Authentication Challenge request
+            </summary>
+            <param name="filterContext"></param>
+            <param name="apiResp"></param>
+            <param name="msgProp"></param>
+        </member>
+        <member name="T:IMIchatAPI.AuthorizationRequiredAttribute">
+            <summary>
+            Authorization attribute to authorize the access to any end point by validating the authentication key received in request header
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.AuthorizationRequiredAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Event triggered before the action gets executed.
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="T:IMIchatAPI.BasicAuthenticationIdentity">
+            <summary>
+            Basic Authentication identity
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.BasicAuthenticationIdentity.#ctor(System.String,System.String,System.String)">
+             <summary>
+             Basic Authentication Identity Constructor
+             </summary>
+             <param name="Key"></param>
+             <param name="Domain"></param>
+            <param name="Method"></param>
+        </member>
+        <member name="P:IMIchatAPI.BasicAuthenticationIdentity.key">
+            <summary>
+            Get/Set for key
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.BasicAuthenticationIdentity.domain">
+            <summary>
+            Get/Set for domain
+            </summary>
+        </member>
+        <member name="T:IMIchatAPI.ValidateModelAttribute">
+            <summary>
+            Action filter to implement all the custom filters
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.ValidateModelAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Event triggered before the action gets executed.
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:IMIchatAPI.MessageLoggingHandler">
+            <summary>
+            Generic message handlers to log all the incoming and out going messages at API
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.MessageLoggingHandler.IncommingMessageAsync(System.Net.Http.HttpRequestMessage,System.String,System.Byte[])">
+            <summary>
+            Method to log the incoming messages
+            </summary>
+            <param name="request">HTTP Request</param>
+            <param name="correlationId">unique id generated for each request</param>
+            <param name="message">Request message</param>
+            <returns>Returns the task</returns>
+        </member>
+        <member name="M:IMIchatAPI.MessageLoggingHandler.OutgoingMessageAsync(System.Net.Http.HttpRequestMessage,System.String,System.Byte[])">
+            <summary>
+            Method to log all out going messages from API
+            </summary>
+            <param name="request">Request</param>
+            <param name="correlationId">Request correlation id</param>
+            <param name="message">Response message</param>
+            <returns></returns>
+        </member>
+        <member name="T:IncomingMessage">
+            <summary>
+            DTO to hold new incoming chat message
+            </summary>
+        </member>
+        <member name="P:IncomingMessage.chatid">
+            <summary>
+            To hold the chatid
+            </summary>
+        </member>
+        <member name="P:IncomingMessage.message">
+            <summary>
+            To hold the array of messages
+            </summary>
+        </member>
+        <member name="P:IncomingMessage.customtags">
+            <summary>
+            To hold the customtags key/value pairs
+            </summary>
+        </member>
+        <member name="P:ChatMO.SourceAddress">
+            <summary>
+            To hold the source address
+            </summary>
+        </member>
+        <member name="P:ChatMO.TextMessage">
+            <summary>
+            To hold the message
+            </summary>
+        </member>
+        <member name="P:ChatMO.WinTransactionId">
+            <summary>
+            To hold the transaction id
+            </summary>
+        </member>
+        <member name="P:ChatMO.DestinationAddress">
+            <summary>
+            To hold the destination address
+            </summary>
+        </member>
+        <member name="P:ChatMO.ServiceId">
+            <summary>
+            To hold the service id
+            </summary>
+        </member>
+        <member name="P:ChatMO.NetworkId">
+            <summary>
+            To hold the network id
+            </summary>
+        </member>
+        <member name="P:ChatMO.DateArrival">
+            <summary>
+            To hold the date arrival
+            </summary>
+        </member>
+        <member name="P:ChatMO.TPTabId">
+            <summary>
+            To hold the TPTabId
+            </summary>
+        </member>
+        <member name="P:ChatMO.TPSeqId">
+            <summary>
+            To hold the TPSeqId
+            </summary>
+        </member>
+        <member name="P:ChatMO.RequestId">
+            <summary>
+            To hold the RequestId
+            </summary>
+        </member>
+        <member name="P:ChatMO.DateCreated">
+            <summary>
+            To hold the DateCreated
+            </summary>
+        </member>
+        <member name="P:ChatMO.ChannelId">
+            <summary>
+            To hold the ChannelId
+            </summary>
+        </member>
+        <member name="P:ChatMO.JsonData">
+            <summary>
+            To hold the JsonData
+            </summary>
+        </member>
+        <member name="P:ChatMO.ServiceKey">
+            <summary>
+            To hold the ServiceKey
+            </summary>
+        </member>
+        <member name="P:ChatMO.SocialId">
+            <summary>
+            To hold the SocialId
+            </summary>
+        </member>
+        <member name="T:TeamInfo">
+            <summary>
+            DTO to hold Team Information upon Authorization
+            </summary>
+        </member>
+        <member name="P:TeamInfo.teamid">
+            <summary>
+            To hold the teamid
+            </summary>
+        </member>
+        <member name="P:TeamInfo.usergroupid">
+            <summary>
+            To hold the usergroupid
+            </summary>
+        </member>
+        <member name="T:ChatStatusResponse">
+            <summary>
+            DTO to hold Chat Status Response
+            </summary>
+        </member>
+        <member name="P:ChatStatusResponse.chatid">
+            <summary>
+            To hold the chatid in response message
+            </summary>
+        </member>
+        <member name="P:ChatStatusResponse.status">
+            <summary>
+            To hold the chat status in response message
+            </summary>
+        </member>
+        <member name="T:Conversation">
+            <summary>
+            holds the particular chat information
+            </summary>
+        </member>
+        <member name="P:Conversation.chatid">
+            <summary>
+            chatid
+            </summary>
+        </member>
+        <member name="P:Conversation.channel">
+            <summary>
+            channel like sms/fb/twitter/email
+            </summary>
+        </member>
+        <member name="P:Conversation.status">
+            <summary>
+            status of the chat
+            </summary>
+        </member>
+        <member name="P:Conversation.userid">
+            <summary>
+            customerid of the end user
+            </summary>
+        </member>
+        <member name="P:Conversation.useridentifier">
+            <summary>
+            customer identifier
+            </summary>
+        </member>
+        <member name="P:Conversation.agentid">
+            <summary>
+            agent id who handling the chat
+            </summary>
+        </member>
+        <member name="P:Conversation.asset">
+            <summary>
+            asset of the chat intiated
+            </summary>
+        </member>
+        <member name="P:ChatConversation.chatid">
+            <summary>
+            chatid
+            </summary>
+        </member>
+        <member name="P:ChatConversation.channel">
+            <summary>
+            channel like sms/fb/twitter/email
+            </summary>
+        </member>
+        <member name="P:ChatConversation.status">
+            <summary>
+            status of the chat
+            </summary>
+        </member>
+        <member name="P:ChatConversation.userid">
+            <summary>
+            customerid of the end user
+            </summary>
+        </member>
+        <member name="P:ChatConversation.useridentifier">
+            <summary>
+            customer identifier
+            </summary>
+        </member>
+        <member name="P:ChatConversation.agentid">
+            <summary>
+            agent id who handling the chat
+            </summary>
+        </member>
+        <member name="T:CreateChat">
+            <summary>
+            DTO to hold new Chat Message
+            </summary>
+        </member>
+        <member name="P:CreateChat.customerId">
+            <summary>
+            To hold the customerid
+            </summary>  
+        </member>
+        <member name="P:CreateChat.integrationId">
+            <summary>
+            integrationid of the chat engine
+            </summary>
+        </member>
+        <member name="P:CreateChat.channel">
+            <summary>
+            channel of the message
+            </summary>
+        </member>
+        <member name="P:CreateChat.chatid">
+            <summary>
+            To hold the chatid
+            </summary>   
+        </member>
+        <member name="P:CreateChat.assignee">
+            <summary>
+            To hold the assignee
+            </summary>   
+        </member>
+        <member name="P:CreateChat.message">
+            <summary>
+            To hold the array of messages
+            </summary>
+        </member>
+        <member name="P:CreateChat.channelparams">
+            <summary>
+            To hold the channelparams key/value pairs
+            </summary>
+        </member>
+        <member name="P:CreateChat.customtags">
+            <summary>
+            To hold the customtags key/value pairs
+            </summary>   
+        </member>
+        <member name="T:MOMTmessage">
+            <summary>
+             holds the MO and MT messages
+            </summary>
+        </member>
+        <member name="P:MOMTmessage.date">
+            <summary>
+            date of the message Ex :2000-01-01 23:00:00
+            </summary>
+        </member>
+        <member name="P:MOMTmessage.type">
+            <summary>
+            Type of message inbound/outbound
+            </summary>
+        </member>
+        <member name="P:MOMTmessage.text">
+            <summary>
+             message 
+            </summary>  
+        </member>
+        <member name="P:MOMTmessage.attachment">
+            <summary>
+            attachmets of the chat
+            </summary>
+        </member>
+        <member name="T:APIAttachment">
+            <summary>
+            holds MO/MT attachment
+            </summary>
+        </member>
+        <member name="P:APIAttachment.Url">
+            <summary>
+            url of the attachement
+            </summary>
+        </member>
+        <member name="P:APIAttachment.Type">
+            <summary>
+            type of the attachment
+            </summary>
+        </member>
+        <member name="T:CreateChatResponse">
+            <summary>
+            DTO to hold Create Chat Response
+            </summary>
+        </member>
+        <member name="P:CreateChatResponse.chatid">
+            <summary>
+            chatid of the chat
+            </summary>
+        </member>
+        <member name="T:eMessageType">
+            <summary>
+            fOR mESAGE TYPE mo,mt
+            </summary>
+        </member>
+        <member name="T:MOMessageList">
+             <summary>
+            FOR MO Messages sent from chat engine 
+             </summary>
+        </member>
+        <member name="P:MOMessageList.integrationid">
+            <summary>
+            used for ce integration
+            </summary>
+        </member>
+        <member name="T:MOmessage">
+            <summary>
+            for mo messsages
+            </summary>
+        </member>
+        <member name="P:MOmessage.date">
+            <summary>
+             date of the message Ex :2000-01-01 23:00:00
+            </summary>
+        </member>
+        <member name="P:MOmessage.text">
+            <summary>
+             message
+            </summary>
+        </member>
+        <member name="T:APIResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:APIResponse.statusCode">
+            <summary>
+            0 = success; -1 = error
+            </summary>
+        </member>
+        <member name="P:APIResponse.description">
+            <summary>
+            API status message. You can define your own message with statuscode 
+            </summary>
+        </member>
+        <member name="P:RequestResponse`1.statusCode">
+            <summary>
+            0 = success; -1 = error
+            </summary>
+        </member>
+        <member name="P:RequestResponse`1.description">
+            <summary>
+            API status message. You can define your own message with statuscode 
+            </summary>
+        </member>
+        <member name="T:ResultsSet">
+            <summary>
+            For all Get Methods response must be an object of this class
+            </summary>
+        </member>
+        <member name="T:Save">
+            <summary>
+            for chategine saving integration
+            </summary>
+        </member>
+        <member name="P:Save.integrationId">
+            <summary>
+            To hold the integrationId
+            </summary>
+        </member>
+        <member name="P:Save.name">
+            <summary>
+            To hold the name
+            </summary>
+        </member>
+        <member name="P:Save.imichaturl">
+            <summary>
+            To hold the imichaturl
+            </summary>
+        </member>
+        <member name="P:Save.teamsecret">
+            <summary>
+            To hold the team authkey
+            </summary>
+        </member>
+        <member name="T:APIToken">
+            <summary>
+            Model to hold token details
+            </summary>
+        </member>
+        <member name="P:APIToken.Id">
+            <summary>
+            Token id
+            </summary>
+        </member>
+        <member name="P:APIToken.Key">
+            <summary>
+            Authentication key for which the token is generated
+            </summary>
+        </member>
+        <member name="P:APIToken.AuthToken">
+            <summary>
+            Token value
+            </summary>
+        </member>
+        <member name="P:APIToken.Date_Create">
+            <summary>
+            Token issue date and time
+            </summary>
+        </member>
+        <member name="P:APIToken.Date_Expire">
+            <summary>
+            When the token get expired (date and time)
+            </summary>
+        </member>
+        <member name="P:APIToken.HostName">
+            <summary>
+            Hold the source host name or IP address
+            </summary>
+        </member>
+        <member name="P:APIToken.Status">
+            <summary>
+            status
+            </summary>
+        </member>
+        <member name="P:APIToken.TransId">
+            <summary>
+            transid
+            </summary>
+        </member>
+        <member name="T:UserAuthentication">
+            <summary>
+            DTO to validate / authenticate the user
+            </summary>
+        </member>
+        <member name="P:UserAuthentication.key">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:UserAuthentication.hostname">
+            <summary>
+            hostname
+            </summary>
+        </member>
+        <member name="P:ChatProfile.email">
+            <summary>
+            To hold the emailaddress
+            </summary>
+        </member>
+        <member name="P:ChatProfile.name">
+            <summary>
+            To hold the emailaddress
+            </summary>
+        </member>
+        <member name="P:Validate.imichaturl">
+            <summary>
+            To hold the imichaturl
+            </summary>
+        </member>
+        <member name="P:Validate.teamsecret">
+            <summary>
+            To hold the teamkey
+            </summary>
+        </member>
+        <member name="P:Delete.integrationId">
+            <summary>
+            To hold the integrationId
+            </summary>
+        </member>
+        <member name="T:IMIchatAPI.Utils.Util">
+            <summary>
+                API utility methods.
+            </summary>
+        </member>
+        <member name="F:IMIchatAPI.Utils.Util.SuccessCode">
+            <summary>
+                Success code to be interpreted by swagger.
+            </summary>
+        </member>
+        <member name="F:IMIchatAPI.Utils.Util.EmptyString">
+            <summary>
+                Empty constant string.
+            </summary>
+        </member>
+        <member name="M:IMIchatAPI.Utils.Util.TryGetSearchQuery``1(System.Object,``0@,System.Text.StringBuilder,System.Int32@,System.Collections.Generic.List{System.String}@,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+                Generate search query.
+                If dataCol sent as null plain query gets generated else
+                parameterized query generated.
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.Utils.Util.PageSize">
+            <summary>
+                Returns configured page size.
+            </summary>
+        </member>
+        <member name="P:IMIchatAPI.Utils.Util.UrlScheme">
+            <summary>
+                Returns configured page size.
+            </summary>
+        </member>
+    </members>
+</doc>

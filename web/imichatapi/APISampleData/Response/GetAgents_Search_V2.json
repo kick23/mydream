@@ -1,0 +1,142 @@
+﻿{
+	"users": [
+		{
+		"id": 24627,
+		"created_at": "2018-01-31T12:00:06.77",
+		"updated_at": "2018-01-31T12:00:06.793",
+		"first_name": "twr5twret",
+		"last_name": "streftg",
+		"login_id": "grstgr",
+		"email_id": "grtsgres@hty.jyy",
+		"status": "disabled",
+		"logged_in": false,
+		"accepting_chats": false,
+		"active_chats": 0
+		},
+		{
+		"id": 23582,
+		"created_at": "2017-12-21T08:48:31.083",
+		"updated_at": "2017-12-21T08:48:31.083",
+		"first_name": "nitesh",
+		"last_name": "groupadmin",
+		"login_id": "niteshgroupadmin",
+		"email_id": "nitesh.groupadmin@imi.com",
+		"status": "active",
+		"logged_in": false,
+		"accepting_chats": true,
+		"active_chats": 1
+		},
+		{
+		"id": 23575,
+		"created_at": "2017-12-14T12:47:41.113",
+		"updated_at": "2017-12-14T12:47:41.113",
+		"first_name": "gser",
+		"last_name": "gserg",
+		"login_id": "reg",
+		"email_id": "regregf@gyth.hy",
+		"status": "disabled",
+		"logged_in": false,
+		"accepting_chats": false,
+		"active_chats": 0
+		},
+		{
+		"id": 23574,
+		"created_at": "2017-12-14T12:45:33.923",
+		"updated_at": "2018-02-14T12:44:17.617",
+		"first_name": "yhtdrhyr",
+		"last_name": "tghyrtg",
+		"login_id": "yhrtghrt",
+		"email_id": "ghxrt@trfgh.ny",
+		"status": "disabled",
+		"logged_in": false,
+		"accepting_chats": false,
+		"active_chats": 0
+		},
+		{
+		"id": 23561,
+		"created_at": "2017-12-13T11:03:36.363",
+		"updated_at": "2017-12-13T11:03:36.363",
+		"first_name": "nitesh",
+		"last_name": "analyst",
+		"login_id": "niteshanalyst",
+		"email_id": "niteshanalyst@imimobile.com",
+		"status": "disabled",
+		"logged_in": false,
+		"accepting_chats": false,
+		"active_chats": 0
+		},
+		{
+		"id": 22395,
+		"created_at": "2017-11-01T12:01:44.497",
+		"updated_at": "2017-11-01T12:01:44.497",
+		"first_name": "Monirul",
+		"last_name": "Islam",
+		"login_id": "monirult",
+		"email_id": "monirult@gmail.com",
+		"status": "active",
+		"logged_in": true,
+		"accepting_chats": true,
+		"active_chats": 2
+		},
+		{
+		"id": 22372,
+		"created_at": "2017-09-20T10:58:38.023",
+		"updated_at": "2017-09-20T10:58:38.023",
+		"first_name": "pravin",
+		"last_name": "s",
+		"login_id": "pravin",
+		"email_id": "pravin@gmail.com",
+		"status": "disabled",
+		"logged_in": false,
+		"accepting_chats": false,
+		"active_chats": 0
+		},
+		{
+		"id": 22366,
+		"created_at": "2017-09-13T15:26:14.307",
+		"updated_at": "2017-10-26T10:56:18.583",
+		"first_name": "shobhit",
+		"last_name": "gupta",
+		"login_id": "shobit",
+		"email_id": "shobhit.g@imimobile.com",
+		"status": "active",
+		"logged_in": true,
+		"accepting_chats": true,
+		"active_chats": 2
+		},
+		{
+		"id": 22336,
+		"created_at": "2017-09-01T14:41:05.487",
+		"updated_at": "2017-09-01T14:41:05.487",
+		"first_name": "abc1",
+		"last_name": "abc1",
+		"login_id": "abc1",
+		"email_id": "abc1@gmail.com",
+		"status": "disabled",
+		"logged_in": false,
+		"accepting_chats": false,
+		"active_chats": 0
+		},
+		{
+		"id": 22328,
+		"created_at": "2017-08-23T11:25:27.223",
+		"updated_at": "2017-08-23T11:25:27.223",
+		"first_name": "frtetgf",
+		"last_name": "esar",
+		"login_id": "56345",
+		"email_id": "zgerf@e3we.ny",
+		"status": "disabled",
+		"logged_in": false,
+		"accepting_chats": false,
+		"active_chats": 0
+		}
+	],
+	"links": {
+		"first": "{apiUrl}/users/search?page=1",
+		"previous": null,
+		"next": "{apiUrl}/users/search?page=2",
+		"last": "{apiUrl}/users/search?page=3",
+		"pages": 3,
+		"total_count": 24
+	}
+}

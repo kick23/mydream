@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ROOT>
+  <LAYOUT ID="L635768734817941444" ROWS="2" COLS="1" RESP="Y" CLASS="wrapper" CSSELEMENTID="" STYLE="">
+    <ROW>
+      <ZONE ID="R1C1" NAME="Header">
+        <SECTION ID="R1C1_S2" NAME="Section" ACTIVE="Y" />
+      </ZONE>
+    </ROW>
+    <ROW>
+      <ZONE ID="R2C1" CSSELEMENTID="maincontainer" CLASS="content-container" STYLE="" NAME="Container">
+        <SECTION ID="R2C1_S1" NAME="Section" ACTIVE="Y" CSSELEMENTID="" CLASS="content-wrapper" STYLE="" TYPE="GENERAL" ENABLE_FORM="N" ENABLE_FORMCACHE="N" FORM_NAME="" ENABLE_OFFLINE="Y" />
+      </ZONE>
+    </ROW>
+  </LAYOUT>
+  <SECTION ID="R1C1_S2">
+    <HTML ID="403C730A07954434AA961B977436BB45" NAME="Html Code" LANG="Y" OPERAND="" TYPE="">
+      <LANG_0>&lt;script&gt;
+window.location.href='clientassets?p=clientassetwebchatnew';
+&lt;/script&gt;</LANG_0>
+    </HTML>
+  </SECTION>
+  <SECTION ID="R2C1_S1">
+    <HTML ID="DC5A0406AD6D4C608399DF230CBD2DB9" NAME="content section start" LANG="Y" OPERAND="" TYPE="">
+      <LANG_0>&lt;section class="content"&gt;
+&lt;div class="above-box marbtm_130"&gt;</LANG_0>
+    </HTML>
+    <TMPLGROUP ID="E69EBE1287234EB6A8E927C995103885" NAME="Group Template" TMPL_TYPE="TEMPLATE" TEMPLATE_ID="E0EA892A735244258E3D2B25760F8D3B" PAGESIZE="" OPERAND="" TYPE="" />
+    <HTML ID="ECB4EFD461AD4A4FA2818DC1061CFD2B" NAME="Html Code">
+      <LANG_0 />
+    </HTML>
+    <HTML ID="95C888D3D32441D794ED1E011F2ED94E" NAME="content section end" LANG="Y" OPERAND="" TYPE="">
+      <LANG_0>&lt;/section&gt;</LANG_0>
+    </HTML>
+    <HTML ID="7BC91CAFF11A48E68E8A4E8398A3EAE4" NAME="Html Code" LANG="Y" OPERAND="" TYPE="">
+      <LANG_0>
+      </LANG_0>
+    </HTML>
+    <TMPLGROUP ID="12D871DCFD8441CDA4563EBDDA363C9A" NAME="Group Template" TMPL_TYPE="TEMPLATE" TEMPLATE_ID="6D3CF22584274B228AAA716A01EF6F37" PAGESIZE="" OPERAND="" TYPE="" />
+    <HTML ID="8085597322304397AC8B3B816C087C61" NAME="Html Code" LANG="Y" OPERAND="" TYPE="">
+      <LANG_0>&lt;link href="css/bootstrap-tag.css?t=!CSSVNO!" rel='stylesheet' type='text/css' /&gt;
+&lt;link  href="css/chosen.css?t=!CSSVNO!"  rel="stylesheet"  type="text/css" /&gt;
+&lt;link href="css/bootstrap-colorpicker.css?t=!CSSVNO!" rel='stylesheet' type='text/css' /&gt; 
+
+&lt;script type="text/javascript" src="js/chosen.jquery.js?t=!JSVNO!"&gt;&lt;/script&gt;
+&lt;script src="js/bootstrap-tagsinput.js?t=!JSVNO!" type="text/javascript"&gt;&lt;/script&gt;
+
+
+&lt;script src="js/bootstrap-colorpicker.js?t=!JSVNO!" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;script src="js/validations.js?t=!JSVNO!" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;script src="js/addcalivechatsettings.js?t=!JSVNO!" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+$(document).ready(function () {
+//webChat.editgetdetails();
+
+//$('#divWidgetColor,#divButtonColor').colorpicker();
+
+});
+&lt;/script&gt;</LANG_0>
+    </HTML>
+  </SECTION>
+</ROOT>

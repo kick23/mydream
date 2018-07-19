@@ -1,0 +1,296 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://widget.imichat.co/chatwidget-V2/css/datepicker.css" />
+    <link rel="stylesheet" href="http://widget.imichat.co/chatwidget-V2/css/dropzone.css">
+    <link rel="stylesheet" href="http://widget.imichat.co/chatwidget-V2/css/wdt-emoji-bundle.css">
+    <link rel="stylesheet" href="http://widget.imichat.co/chatwidget-V2/css/chat-widget-frame.css">
+    <link rel="stylesheet" href="http://widget.imichat.co/chatwidget-V2/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <script src="http://widget.imichat.co/chatwidget-V2/js/jquery-3.1.1.js"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/bootstrap-datepicker.js"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/imichatgeneral.js"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/survey-manager.js?v=124"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/bootstrap.min.js"></script>
+   
+    <script src="http://widget.imichat.co/chatwidget-V2/js/emoji.min.js"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/wdt-emoji-bundle.min.js"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/mqttws31.js"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/imiclient.js"></script>
+   
+    <script>
+        function checkframe() {
+            try {
+                if (window.self === window.top) {
+                    document.body.innerHTML = "";
+                } else {
+                    //GetChats();
+                    //restoreState();
+                    //document.getElementById("chatwindow1").style.display = 'block';
+                }
+            } catch (e) {
+
+                // return true;
+            }
+        }
+        try {
+            var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+            var eventer = window[eventMethod];
+            var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+            eventer(messageEvent, function (e) {
+                debugger;
+                try {
+                    var msg = $.parseJSON(e.data);
+                    //var msg= e.data;
+                    if (msg.action == null) {
+                        localStorage.setItem("style_" + IMIGeneral.getDomain(), e.data);
+                        //IMIGeneral.storeLocal("style_" + IMIGeneral.getDomain(), e.data);
+                    } else {
+                        if (msg.action == 'resize') {
+                            IMILiveChat.hideCloseButton();
+                        }
+                        if (msg.action == 'openchat') {
+                            LoadChat(msg.threadid);
+                        }
+                        if (msg.action == 'getstyle') {
+                            IMILiveChat.getStyles(msg.attrkey, msg.host);
+                        }
+                    }
+                } catch (e) {}
+            });
+        } catch (e) {}
+    </script>
+</head>
+
+<body class="imichatwidget-body" onload="checkframe()">
+
+    <aside id="divchataside1" style="display:block">
+        <div class="chatwindow" id="chatwindow" style="display:block;">
+
+            <div id="divloader" class="loader" style="display:none">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke="#ffa700" stroke-width="1"></circle>
+                </svg>
+                <span class="loadingtxt">Loading...</span>
+            </div>
+
+            <div class="popup-head" id="divhead1">
+                <a class="back-icon" href="#" id="backicon" style="display: none;" onclick="IMILiveChat.moveback()">
+                    <span class="icon-menu-icon"></span>
+                </a>
+                <div class="top-right-icon">
+                    <a class="chatwindow-minimize" href="#" onclick="IMILiveChat.minWindow()" id="minbutton">
+                        <span class="icon-close"></span>
+                    </a>
+                    <div class="dropdown">
+                        <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;">
+                            <span class="icon-menuicon"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li>
+                                <a id="opttranscript" style="display:none;" class="chatwindow-close" href="javascript:void(0);"
+                                    data-toggle="modal">Send chat transcript to your email</a>
+                            </li>
+
+                            <li>
+                                <a class="chatwindow-close" href="javascript:void(0);" onclick="IMILiveChat.confirm();">End chat</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="big">
+                    <img src="images/insignia.png" class="imiwidget-clientlogo" id="widgetlogo" />
+                    <div class="clearfix"></div>
+                    <h1 class="chatpage-heading" id="chatpageheading">IMImobile</h1>
+                    <p class="heading-desc" id="headerdesc">configure this text in the console.</p>
+                    <p class="heading-desc typicallrply" id="headertypicallyrply" style="display:none;"></p>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="small" style="display:none">
+                    <div class="clearfix"></div>
+                    <h1 class="chatpage-heading" id="smallchatpageheading">IMImobile</h1>
+                    <p class="heading-desc" id="smallheaderdesc">configure this text in the console.</p>
+                </div>
+            </div>
+
+            <div class="ooomsg-chat-div" style="display:none">
+
+                <p class="ooomsg-chat" id="oooMsg">Currently our chat services are closed. Please try to reach us in working hours.9am to 5pm</p>
+            </div>
+
+            <div class="conversation-history" id="chatthreads">
+            </div>
+
+            <div class="new-conversation" id="new-conversation" style="display:block">
+                <a title="" class="new-conv-btn" href="#" id="start-chat">Start Chat</a>
+                <i class="error" id="icweStart"></i>
+            </div>
+
+
+            <div class="dropzone-mine chat_box_wrapper" id="chat" style="display:none;">
+                <div id="scrollindicator"></div>
+                <div class="chat_box touchscroll chat_box_colors_a" id="icwdivcarea">
+                </div>
+                <div class="dropemptydiv"></div>
+            </div>
+
+            <div class="chat_submit_box" id="chat_submit_box" style="display:none;">
+                <div id="wctypingindicator" style="display:none;">
+                    <img src="images/wcindicator.gif" style="height: 77px; margin-left: -23px; margin-top: -78px; position: absolute;">
+                </div>
+                <i class="error" id="icweMsg"></i>
+                <div class="nitesh-chat-box">
+                    <textarea class="md-input submit_message" id="icwmsg" maxlength="1000" name="icwmsg" placeholder="Write a reply.."></textarea>
+                    <a href="#" id="aSend" onclick="IMILiveChat.send(); return false;" class="editor-send" role="button">
+                        <i class="icon-send-button" id="aSendicon"></i>
+                    </a>
+                    <a href="#" id="sendloading" class="editor-send" style="display:none" role="button">
+                        <svg class="circular chatloadingicon" viewBox="25 25 50 50">
+                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke="#ffffff" stroke-width="6"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="editor-paperclip" onclick="IMILiveChat.showFileUpload();" role="button">
+                        <i class="icon-attachment"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="wdt-emoji-popup" style="display:none;">
+                <a class="wdt-emoji-popup-mobile-closer" href="#">�</a>
+                <div class="wdt-emoji-menu-content">
+                    <div id="wdt-emoji-menu-header">
+                        <a class="wdt-emoji-tab active" data-group-name="Recent"></a>
+                        <a class="wdt-emoji-tab" data-group-name="People"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Nature"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Foods"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Activity"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Places"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Objects"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Symbols"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Flags"></a>
+                        <a class="wdt-emoji-tab" data-group-name="Custom"></a>
+                    </div>
+                    <div class="wdt-emoji-scroll-wrapper">
+                        <div id="wdt-emoji-menu-items">
+                            <input id="wdt-emoji-search" placeholder="Search" type="text">
+                            <h3 id="wdt-emoji-search-result-title">Search Results</h3>
+                            <div class="wdt-emoji-sections"></div>
+                            <div id="wdt-emoji-no-result">
+                                No emoji found
+                            </div>
+                        </div>
+                    </div>
+                    <div id="wdt-emoji-footer">
+                        <div id="wdt-emoji-preview">
+                            <span id="wdt-emoji-preview-img"></span>
+                            <div id="wdt-emoji-preview-text">
+                                <span id="wdt-emoji-preview-name"></span>
+                                <br>
+                                <span id="wdt-emoji-preview-aliases"></span>
+                            </div>
+                        </div>
+                        <div id="wdt-emoji-preview-bundle">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="emailtranscript" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </a>
+                            &nbsp;
+                        </div>
+                        <div id="divmodalbody" class="modal-body">
+                        </div>
+
+                        <div id="divtscriptfooter" class="modal-footer" style="display:none;">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button id="btnsend" onclick="IMILiveChat.close();" type="button" class="btn btn-primary">End</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/dropzone.js"></script>
+    <script src="http://widget.imichat.co/chatwidget-V2/js/imichatwidgetv2.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //  $(window).on("resize", sendHeight);
+
+            $("#start-chat").focus();
+
+        });
+        var ts;
+        $(document).bind('touchstart', function (e) {
+            ts = e.originalEvent.touches[0].clientY;
+        });
+
+        $(document).bind('touchend', function (e) {
+            $("#dummy").click();
+            $('#divchataside1').scrollTop(0);
+            setTimeout(function () {
+                // $(document).scrollTop($(this).scrollTop());
+                //document.activeElement.blur();
+
+                $(document).on('blur', 'input, textarea', function () {
+                    setTimeout(function () {
+                        //window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
+                        jQuery('body').scrollTop(0.0);
+                    }, 0);
+                });
+            }, 10);
+        });
+
+        $('#chat').on('DOMMouseScroll mousewheel', function (e) {
+            var ht = 65;
+
+            if ($("#chat_submit_box").is(":visible") == false) {
+                ht = 10;
+            }
+            if (e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+                //scroll down
+                $('#chat').css('height', 'calc(100% - ' + ht + 'px)');
+                $('.big').hide();
+                $('.small').show();
+            } else {
+                //scroll up
+                $('#chat').css('height', 'calc(100% - ' + (ht + 115) + 'px)');
+                $('.big').show();
+                $('.small').hide();
+
+            }
+            //prevent page fom scrolling
+            return false;
+        });
+
+
+        $('.small').on('click', function () {
+            var ht = 165;
+
+            if ($("#chat_submit_box").is(":visible") == false) {
+                ht = 105;
+            }
+            $('#chat').css('height', 'calc(100% - ' + ht + 'px)');
+            $('.big').show();
+            $('.small').hide();
+        });
+
+        if (IMIGeneral.getQueryString(location.href, "docwidth") > 720) {
+            $("#minbutton").hide();
+            $("#minbutton").attr("onclick", "");
+        }
+        IMILiveChat.init();
+    </script>
+    
+    <input type="hidden" value="" id="hdnicwagent" name="hdnicwagent" />
+    <input type="hidden" value="" id="hdnisemojienable" name="hdnisemojienable" />
+</body>
+
+</html>

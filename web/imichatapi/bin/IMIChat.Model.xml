@@ -1,0 +1,1495 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IMIChat.Model</name>
+    </assembly>
+    <members>
+        <member name="T:IMIChat.Model.ActionResponse`1">
+            <summary>
+                Action response class.
+            </summary>
+            <typeparam name="T">The response object type.</typeparam>
+        </member>
+        <member name="P:IMIChat.Model.ActionResponse`1.StatusCode">
+            <summary>
+                Response status code.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ActionResponse`1.Description">
+            <summary>
+                Response description.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ActionResponse`1.Response">
+            <summary>
+                Response data.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AgentInfo">
+            <summary>
+                User information
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.Id">
+            <summary>
+                Unique identifier of a user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.CreatedAt">
+            <summary>
+                Timestamp when the user was created
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.UpdatedAt">
+            <summary>
+                Timestamp when the user details were last updated
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.FirstName">
+            <summary>
+                First Name of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.LastName">
+            <summary>
+                Last Name of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.LoginId">
+            <summary>
+             Login ID of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.EmailId">
+            <summary>
+                Email ID of the user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.Status">
+            <summary>
+             Current Status of the User: ACTIVE | INACTIVE
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.AcceptingChats">
+            <summary>
+                Flag denoting if user is accepting transferred/system assigned chats.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentInfo.ActiveChats">
+            <summary>
+                Count of active chats in the User’s bucket
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AgentRoleScope">
+            <summary>
+                User's application role scope details.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentRoleScope.Group">
+            <summary>
+                User's group.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentRoleScope.Team">
+            <summary>
+             User's team.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AgentPriviledges">
+            <summary>
+                User's application privilege details.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPriviledges.Role">
+            <summary>
+                User's role
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPriviledges.Scope">
+            <summary>
+                User's scope.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AgentDetailedInfo">
+            <summary>
+                User's detailed information.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.AgentDetailedInfo.#ctor">
+            <summary>
+                User detailed info constructor.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:IMIChat.Model.AgentDetailedInfo.Id" -->
+        <member name="P:IMIChat.Model.AgentDetailedInfo.CreatedAt">
+            <summary>
+             Timestamp when the user was created
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.UpdatedAt">
+            <summary>
+                Timestamp when the user was last updated
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.FirstName">
+            <summary>
+                First Name of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.LastName">
+            <summary>
+                Last Name of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.LoginId">
+            <summary>
+                Login ID of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.EmailId">
+            <summary>
+               Email ID of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.Status">
+            <summary>
+                Current Status of the User: ACTIVE | INACTIVE
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.AcceptingChats">
+            <summary>
+                Flag denoting if user is accepting transferred/system assigned chats.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.ActiveChats">
+            <summary>
+                Count of active chats in the User’s bucket
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.JobDescription">
+            <summary>
+                User's job description
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.LoginUsingEmail">
+            <summary>
+                Flag denoting if user can login using email as well
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.RoleType">
+            <summary>
+                Role of the User : Team Manager | Agent | Analyst
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.CustomAttributes">
+            <summary>
+                Custom Attributes linked to a user (Key Value Pairs)
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentDetailedInfo.Privileges">
+            <summary>
+                User privileges.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AgentsDetailInfo">
+            <summary>
+                User's detailed information.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.AgentsDetailInfo.#ctor">
+            <summary>
+                User detail info constructor.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentsDetailInfo.Agents">
+            <summary>
+                List of users.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AgentPostParams">
+            <summary>
+                User's input parameter details for insert
+            </summary>.
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.FirstName">
+            <summary>
+                First Name of the User.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.LastName">
+            <summary>
+                Last Name of the User
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.LoginId">
+            <summary>
+                Login ID of the User.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.EmailId">
+            <summary>
+                Email ID of the User.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.AcceptingChats">
+            <summary>
+                Flag denoting if user is accepting transferred/system assigned chats.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.Password">
+            <summary>
+                Password of the User
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.LoginUsingEmail">
+            <summary>
+                Flag denoting if user can login using email as well.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.JobDescription">
+            <summary>
+                Job Description of the User
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.Role">
+            <summary>
+                Team Manager | Agent | Analyst
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPostParams.CustomAttributes">
+            <summary>
+                User's custom attributes (Key Value Pairs)
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AgentPutParams">
+            <summary>
+                User's input parameter details for update.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPutParams.FirstName">
+            <summary>
+                First Name of the User.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPutParams.LastName">
+            <summary>
+                Last Name of the User
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPutParams.Status">
+            <summary>
+                Current Status of the User: ACTIVE | INACTIVE'
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPutParams.JobDescription">
+            <summary>
+                Job Description of the User
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPutParams.LoginUsingEmail">
+            <summary>
+                Flag denoting if user can login using email.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AgentPutParams.CustomAttributes">
+            <summary>
+                User's custom attributes (Key Value Pairs)
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatAttachment">
+            <summary>
+                Chat attachment class.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatAttachment.Type">
+            <summary>
+                Type of the attachment. Supported values : IMAGE, VIDEO, AUDIO, FILE
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatAttachment.Url">
+            <summary>
+            URL of the attachment
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.IChatMessage">
+            <summary>
+                Chat message basic signature.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatMessage.Type">
+            <summary>
+                Indicates the direction of the message. Values : INBOUND | OUTBOUND | Announcement.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatMessage.Text">
+            <summary>
+                Text content in the message
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatMessage.Timestamp">
+            <summary>
+                Timestamp of when the message was sent/received. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatMessage.Attachment">
+            <summary>
+                Attachment OBJECT
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatMessage">
+            <summary>
+                MO and MT messages
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessage.Type">
+            <summary>
+                Indicates the direction of the message. Values : INBOUND | OUTBOUND | Announcement.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessage.Text">
+            <summary>
+                Text content in the message
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessage.AttachmentType">
+            <summary>
+                Internal property. Type of the attachment. Supported values : IMAGE, VIDEO, AUDIO, FILE
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessage.AttachmentUrl">
+            <summary>
+                Internal property. URL of the attachment
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessage.Attachment">
+            <summary>
+                Attachment OBJECT
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessage.Timestamp">
+            <summary>
+                Timestamp of when the message was sent/received. 
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.Chat">
+            <summary>
+            For Chat Creation
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.ChatId">
+            <summary>
+            Unique identifier of a chat 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.AliasId">
+             <summary>
+            An external ID that can be used to reference a chat 
+             </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.Channel">
+            <summary>
+            Channel on which the conversation is carried out : SMS | Facebook | Livechat | Twitter | Email | API
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.AssetId">
+            <summary>
+            Asset used to reply: MSISDN, Page ID, Email ID, Twitter ID ,Service Key (for API channel), Livechat App ID Ex: IM12342
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.NewCustomer">
+            <summary>
+            Insert details of a new customer. Ignored if an existing customer already exists the same destination ID provided. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.DestinationId">
+            <summary>
+            Considers this field to be the Mobile Number | Facebook PS ID | Twitter ID | Email ID | User ID (for API channel) | Livechat ID - depending on the Channel mentioned
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.Subject">
+            <summary>
+            Email Subject (Mandatory if Channel = Email)
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.ThreadId">
+            <summary>
+            Unique identifier of a Thread (Mandatory if Channel = Livechat)
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.Assignee">
+            <summary>
+            Login ID of the User to whom the chat is to be assigned 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.Messages">
+            <summary>
+            Collection of Message OBJECT
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.Tags">
+            <summary>
+            ARRAY of Tags to be applied on the chat 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.Chat.Other_details">
+            <summary>
+            Custom attributes linked to a chat. To be provided as Key Value Pairs.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.UpdateChatDetails">
+            <summary>
+            patch - update chat details
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UpdateChatDetails.AliasId">
+            <summary>
+            An external ID that can be used to reference a chat
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UpdateChatDetails.Tags">
+            <summary>
+            ARRAY of tags to be applied on the chat (Any existing tags on the chat will be replaced with these)
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UpdateChatDetails.Status">
+            <summary>
+              Allowed values: QUEUED | PICKED | ONHOLD | CLOSED
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UpdateChatDetails.Assignee">
+            <summary>
+            Login ID of the user to whom the chat is to be assigned
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UpdateChatDetails.Other_details">
+            <summary>
+            For chat meta data
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatList">
+            <summary>
+                Chat list class.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.ChatList.#ctor">
+            <summary>
+                Chat list object constructor.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatList.Chats">
+            <summary>
+                Collection of the CHATS List Object
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatList.Links">
+            <summary>
+                Contains the links to the previous and next page in case the response involves pagination.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatList.TotalCount">
+            <summary>
+                Total chats count
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.IChatBasic">
+            <summary>
+                Basic chat details interface.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.ChatId">
+            <summary>
+                Unique identifier of a chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.AliasId">
+            <summary>
+                An external ID that can be used to reference a chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.ChannelId">
+            <summary>
+                Internal property. Channel :facebook,email,twitter,sms
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.Channel">
+            <summary>
+                Channel on which conversation is being carried out. Possible values: SMS | Facebook | Twitter | Livechat | API | Email
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.CStatus">
+            <summary>
+               Current status of the Chat. Internal property.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.Status">
+            <summary>
+               Current status of the Chat. Possible Values : QUEUED | PICKED | ONHOLD | CLOSED.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.Assignee">
+            <summary>
+                Login ID of the User the chat is currently assigned.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.CustomerId">
+            <summary>
+                Unique identifier of the Customer
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.DestinationId">
+            <summary>
+                The destination ID of the customer being addressed. Considers the value based on the channel. 
+                   1)	Mobile No. 
+                   2)	Facebook PS ID
+                   3)	Twitter ID
+                   4)	Email ID
+                   5)   User ID (API channel)
+                   6)	Livechat ID
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.AwaitingResponseSince">
+            <summary>
+                Duration in seconds since the last unanswered inbound message.  
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.Tags">
+            <summary>
+                ARRAY of Tags applied on the chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.Asset">
+            <summary>
+                ARRAY of Asset OBJECT. See ASSET object for more details.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IChatBasic.OtherDetails">
+            <summary>
+                Custom Attributes linked to a chat. Provided as Key Value Pairs.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatDetailed">
+            <summary>
+                Chat detail class.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.IAuditInfo">
+            <summary>
+                Audit info interface
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IAuditInfo.CreatedAt">
+            <summary>
+                Date of resource creation.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.IAuditInfo.UpdatedAt">
+            <summary>
+                Date of resource update.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.ChatDetailed.#ctor">
+            <summary>
+                Chat detail object constructor.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.ChatId">
+            <summary>
+                Unique identifier of a chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.AliasId">
+            <summary>
+                An external ID that can be used to reference a chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.CreatedAt">
+            <summary>
+                Timestamp of when the chat was created. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.UpdatedAt">
+            <summary>
+                Timestamp of the when the chat was last modified. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.ChannelId">
+            <summary>
+                Internal property. Channel :facebook,email,twitter,sms
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Channel">
+            <summary>
+                Channel on which conversation is being carried out. Possible values: SMS | Facebook | Twitter | Livechat | API | Email
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.CStatus">
+            <summary>
+               Internal property Current status of the Chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Status">
+            <summary>
+               Current status of the Chat. Values can be  QUEUED | PICKED | ONHOLD | CLOSED.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Assignee">
+            <summary>
+                Login ID of the agent to whom the chat is currently assigned.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.AwaitingResponseSince">
+            <summary>
+                Duration in seconds since the last inbound message that hasn’t been answered yet. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.TagDetails">
+            <summary>
+                Internal property
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Tags">
+            <summary>
+                ARRAY of tags applied on the chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.AssetId">
+            <summary>
+                Internal Asset id.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.AssetName">
+            <summary>
+                Internal Asset name.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Asset">
+            <summary>
+                ARRAY of Asset OBJECT.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Customer">
+            <summary>
+                OBJECT containing ID, Name and Destination ID parameters
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Messages">
+            <summary>
+                Collection of the MESSAGE OBJECT
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Notes">
+            <summary>
+                Access URL for Notes related to the Chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.Triggers">
+            <summary>
+                Access URL for Triggers related to the Chat
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.ChatMetaDetails">
+            <summary>
+                Internal custom parameter details
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.OtherDetails">
+            <summary>
+               Custom Attributes linked to a chat. (Key Value Pairs)
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.CustomerId">
+            <summary>
+                Unique identifier of the customer. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.DestinationId">
+            <summary>
+                The destination ID of the customer being addressed. Considers the value based on the channel. 
+                   1)	Mobile No. 
+                   2)	Facebook PS ID
+                   3)	Twitter ID
+                   4)	Email ID
+                   5)   User ID (API channel)
+                   6)	Livechat ID
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatDetailed.CustomerName">
+            <summary>
+                Internal property.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.CustomerInfo">
+            <summary>
+                Customer information class.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.CustomerInfo.Id">
+            <summary>
+                Unique identifier of the customer as per system records. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.CustomerInfo.Name">
+            <summary>
+                Customer name.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.CustomerInfo.DestinationId">
+            <summary>
+                The destination ID of the customer being addressed. Considers the value based on the channel. 
+                   1)	Mobile No. 
+                   2)	Facebook PS ID
+                   3)	Twitter ID
+                   4)	Email ID
+                   5)   User ID (API channel)
+                   6)	Livechat ID
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.NewCustomer">
+            <summary>
+            for new_customer info
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.NewCustomer.Id">
+            <summary>
+                Unique identifier of the customer as per system records. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.NewCustomer.Name">
+            <summary>
+                Customer name.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.NewCustomer.ProfileUrl">
+            <summary>
+            Profile url
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.NewCustomer.Locale">
+            <summary>
+            Locale
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.NewCustomer.Gender">
+            <summary>
+            Gender
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatBasic">
+            <summary>
+                Chat basic class.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.ChatId">
+            <summary>
+                Unique identifier of a chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.AliasId">
+            <summary>
+                An external ID that can be used to reference a chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.CreatedAt">
+            <summary>
+                Timestamp of when the chat was created. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.UpdatedAt">
+            <summary>
+                Timestamp of the when the chat was last modified. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.CStatus">
+            <summary>
+               Internal property Current status of the Chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.Status">
+            <summary>
+               Current status of the Chat. Values can be  QUEUED | PICKED | ONHOLD | CLOSED.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.AwaitingResponseSince">
+            <summary>
+                Duration in seconds since the last inbound message that hasn’t been answered yet. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.ChannelId">
+            <summary>
+                Internal property. Channel :facebook,email,twitter,sms
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.Channel">
+            <summary>
+                Channel :facebook,email,twitter,sms
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.Asset">
+            <summary>
+                ARRAY of Asset OBJECT. See Assets object for more details.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.AssetId">
+            <summary>
+                Internal Asset id.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.AssetName">
+            <summary>
+                Internal Asset name.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.CustomerId">
+            <summary>
+                Unique identifier of the customer as per system records. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.DestinationId">
+            <summary>
+                The destination ID of the customer being addressed. Considers the value based on the channel. 
+                   1)	Mobile No. 
+                   2)	Facebook PS ID
+                   3)	Twitter ID
+                   4)	Email ID
+                   5)   User ID (API channel)
+                   6)	Livechat ID
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.Assignee">
+            <summary>
+                Login ID of the agent the chat is currently assigned o.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.TagDetails">
+            <summary>
+                Internal property
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.Tags">
+            <summary>
+                ARRAY of tags applied on the chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.ChatMetaDetails">
+            <summary>
+                Internal custom parameter details
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.OtherDetails">
+            <summary>
+                Custom Attributes linked to a chat (Key Value Pairs)
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatBasic.TotalCount">
+            <summary>
+                Total chats count
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.MessageSignature">
+            <summary>
+                Message signature class.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.MessageSignature.Sender">
+            <summary>
+                Login ID of the agent who sent the message. 
+                Holds value : SYSTEM if it’s a system generated outbound.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatMessageDetailed">
+            <summary>
+                Chat message detailed info.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessageDetailed.Sender">
+            <summary>
+                Internal property.Login ID of the agent who sent the message. 
+                Holds value : SYSTEM if it’s a system generated outbound.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessageDetailed.Agent">
+            <summary>
+                Internal property.Login ID of the agent who added the announcement. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ChatMessageDetailed.Signature">
+            <summary>
+                Signature OBJECT.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.AssetDetails">
+            <summary>
+                Asset details class.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AssetDetails.Id">
+            <summary>
+                Unique Identifier of the Asset (SMS : Longcode | Facebook : Page ID | Twitter : Owner ID | Email : From Email ID | Livechat : App ID | API : Service Key).
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.AssetDetails.Name">
+            <summary>
+                Name of the Asset
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.Enums.ChatStatus">
+            <summary>
+            enum for chat status
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatType">
+            <summary>
+                Chat type enum.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.MO">
+            <summary>
+                MO chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.MT">
+            <summary>
+                MT chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.AR">
+            <summary>
+                AR chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.OO">
+            <summary>
+                OO chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.CR">
+            <summary>
+                CR chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.CL">
+            <summary>
+                CL chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.LOG">
+            <summary>
+                LOG chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.DND">
+            <summary>
+                DND chat type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatType.ILOG">
+            <summary>
+                ILOG chat type
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.MessageType">
+            <summary>
+                Message type enum.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.MessageType.Inbound">
+            <summary>
+                Inbound message type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.MessageType.Outbound">
+            <summary>
+                Outbound message type
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.MessageType.Announcement">
+            <summary>
+                Announcement message type
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.ModelExtensions.GetDisplayName(System.Enum)">
+            <summary>
+            To get dispalyname 
+            </summary>
+            <param name="enumValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IMIChat.Model.ModelExtensions.IsSqlDatetime(System.DateTime)">
+            <summary>
+                 Check if datetime is valid sql server date.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.ChatTypeAttribute.#ctor(IMIChat.Model.ChatType)">
+            <summary>
+                Chat type attribute constructor.
+            </summary>
+            <param name="chatType"></param>
+        </member>
+        <member name="P:IMIChat.Model.ChatTypeAttribute.ChatType">
+            <summary>
+                Chat type.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.MessageTypeAttribute.#ctor(IMIChat.Model.MessageType)">
+            <summary>
+                Message type attribute constructor.
+            </summary>
+            <param name="messageType"></param>
+        </member>
+        <member name="P:IMIChat.Model.MessageTypeAttribute.MessageType">
+            <summary>
+                Message type.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.OperatorsAttribute">
+            <summary>
+                Operators validation attribute.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.OperatorsAttribute.#ctor(IMIChat.Model.OperatorMappings)">
+            <summary>
+                Operators attribute constructor.
+            </summary>
+            <param name="allowedOperators"></param>
+        </member>
+        <member name="P:IMIChat.Model.OperatorsAttribute.AllowedOperators">
+            <summary>
+                Allowed operators.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.LogType">
+            <summary>
+                Type of log.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.LogType.HandledError">
+            <summary>
+                Information log type.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.LogType.RequestInformation">
+            <summary>
+                Request log type.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.LogType.Error">
+            <summary>
+                Error log type.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.UserFiltrationCriteria">
+            <summary>
+                User filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.UserFiltrationCriteria.created_at">
+            <summary>
+                Created at filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.UserFiltrationCriteria.updated_at">
+            <summary>
+               updated at filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.UserFiltrationCriteria.status">
+            <summary>
+                status filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.UserFiltrationCriteria.accepting_chats">
+            <summary>
+                accepting chats filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.UserFiltrationCriteria.active_chats">
+            <summary>
+                active chats filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.UserFiltrationCriteria.login_id">
+            <summary>
+                status filtration criteria.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ChatFiltrationCriteria">
+            <summary>
+                Chat filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatFiltrationCriteria.created_at">
+            <summary>
+                Created at filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatFiltrationCriteria.updated_at">
+            <summary>
+               updated at filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatFiltrationCriteria.status">
+            <summary>
+                status filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatFiltrationCriteria.channel">
+            <summary>
+                channel filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatFiltrationCriteria.customer_id">
+            <summary>
+                customer id filtration criteria.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.ChatFiltrationCriteria.tag">
+            <summary>
+                tag filtration criteria.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.SearchParamDataType">
+            <summary>
+                Search param data type.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.SearchParamDataType.String">
+            <summary>
+                String param type.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.SearchParamDataType.DateTime">
+            <summary>
+                DateTime param type.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.SearchParamDataType.Boolean">
+            <summary>
+                Boolean param type.
+            </summary>
+        </member>
+        <member name="F:IMIChat.Model.SearchParamDataType.Numeric">
+            <summary>
+                Numeric param type.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.ParamMetaInfoAttribute">
+            <summary>
+                Param meta info class.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.ParamMetaInfoAttribute.#ctor(IMIChat.Model.SearchParamDataType)">
+            <summary>
+                Param meta info constructor.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.ParamMetaInfoAttribute.IsValid(System.String,System.Object@,System.String@)">
+            <summary>
+                Check if data is valid.
+                Returns data as per data type.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.InputPattern">
+            <summary>
+                Optional: Input regex pattern.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.OutType">
+            <summary>
+                Optional: Output enum type.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.DBColumnName">
+            <summary>
+                Optional: of the column to filter by.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.WrapBySingleQuotes">
+            <summary>
+                Wrap value with single quotes.
+                Mandatory: if using procedure.
+                Optional: If using plain query.
+                Default:false
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.SqlDbType">
+            <summary>
+                Mandatory: if using plain query.
+                Optional: if using procdure. 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.HasMultipleOccurrences">
+            <summary>
+                Does the search criteria have multiple occurances for a single row.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.MaxLength">
+            <summary>
+                Input value max length.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.DataType">
+            <summary>
+                Data type
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.DependencyValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.ParamMetaInfoAttribute.DependencyCondition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.PagingInfo">
+            <summary>
+                Paging info class.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.PagingInfo.#ctor">
+            <summary>
+                Paging info constructor.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.PagingInfo.#ctor(System.Int32,System.Int32)">
+            <summary>
+                Paging info constructor.
+            </summary>
+            <param name="totalCount">The result count</param>
+            <param name="pageSize">Maximum row per page.</param>
+        </member>
+        <member name="P:IMIChat.Model.PagingInfo.First">
+            <summary>
+                First page link.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.PagingInfo.Previous">
+            <summary>
+                Previous page link.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.PagingInfo.Next">
+            <summary>
+                Next page link.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.PagingInfo.Last">
+            <summary>
+                Last page link.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.PagingInfo.Pages">
+            <summary>
+                Total no of page(s).
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.PagingInfo.TotalCount">
+            <summary>
+                Total no of record(s).
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.PagingReq">
+            <summary>
+                Page meta class.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.PagingReq.Page">
+            <summary>
+                The page no identifier.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.QueryRules">
+            <summary>
+                Filtration query.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.QueryRules.Condition">
+            <summary>
+                Condtion betweeen search parameters.
+                Expected value is 'AND' and 'OR'.
+                For the first search parameter condition is not required.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.QueryRules.Rules">
+            <summary>
+                List of filters to be applied.
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.UserInfo">
+            <summary>
+                User information
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.Id">
+            <summary>
+                Unique identifier of an user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.CreatedAt">
+            <summary>
+                Timestamp when the user was created
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.UpdatedAt">
+            <summary>
+                Timestamp when the user was last updated
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.FirstName">
+            <summary>
+                First Name of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.LastName">
+            <summary>
+                Last Name of the user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.LoginId">
+            <summary>
+             Login ID of the user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.EmailId">
+            <summary>
+                Email ID of the user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.UStatus">
+            <summary>
+               Internal property Current status of the Chat.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.Status">
+            <summary>
+                Current Status of the User: ACTIVE | INACTIVE 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.LoggedIn">
+            <summary>
+                Boolean value of User Login.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.AcceptingChats">
+            <summary>
+                Flag denoting if user is accepting any chats.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserInfo.ActiveChats">
+            <summary>
+                Count of active chats in the User’s bucket
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.UserDetailedInfo">
+            <summary>
+                User's detailed information.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.UserDetailedInfo.#ctor">
+            <summary>
+                User detailed info constructor.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.Id">
+            <summary>
+                Unique identifier of an user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.CreatedAt">
+            <summary>
+                Timestamp when the user was created
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.UpdatedAt">
+            <summary>
+                Timestamp when the user was last updated
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.FirstName">
+            <summary>
+                First Name of the user
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.LastName">
+            <summary>
+                Last Name of the user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.LoginId">
+            <summary>
+             Login ID of the user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.EmailId">
+            <summary>
+                Email ID of the user.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.Status">
+            <summary>
+                Current Status of the User: ACTIVE | INACTIVE 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.LoggedIn">
+            <summary>
+                Boolean value of User Login.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.AcceptingChats">
+            <summary>
+                Flag denoting if user is accepting any chats.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.ActiveChats">
+            <summary>
+                Count of active chats in the User’s bucket
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.JobDescription">
+            <summary>
+                Job Description of the User
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.LoginUsingEmail">
+            <summary>
+                Flag denoting if user can login using email id.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.RoleType">
+            <summary>
+                Role of the User : Team Manager | Agent | Analyst 
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UserDetailedInfo.CustomAttributes">
+            <summary>
+                User's custom attributes.
+                The output value pattern is:
+                {
+                    "key1" : "value1",
+                    "key2" : "value2"
+                }
+            </summary>
+        </member>
+        <member name="T:IMIChat.Model.UsersDetailInfo">
+            <summary>
+                User's detailed information.
+            </summary>
+        </member>
+        <member name="M:IMIChat.Model.UsersDetailInfo.#ctor">
+            <summary>
+                User detail info constructor.
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UsersDetailInfo.Users">
+            <summary>
+                Collection of the USERS List Object
+            </summary>
+        </member>
+        <member name="P:IMIChat.Model.UsersDetailInfo.Links">
+            <summary>
+                Contains the links to the previous and next page in case the response involves pagination.
+            </summary>
+        </member>
+    </members>
+</doc>

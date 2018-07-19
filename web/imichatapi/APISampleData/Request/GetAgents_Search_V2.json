@@ -1,0 +1,55 @@
+﻿{
+    "condition": "OR",
+    "rules": [
+		{
+			"condition": "AND",
+			"rules": [
+			{
+				"param_name": "status",
+				"operator": "eq",
+				"param_value": "disabled"
+			},
+			{
+				"param_name": "accepting_chats",
+				"operator": "eq",
+				"param_value": "false"
+			}
+			]
+		},
+		{
+			"condition": "AND",
+			"rules": [
+				{
+					"param_name": "status",
+					"operator": "eq",
+					"param_value": "active"
+				},
+				{
+					"param_name": "created_at",
+					"operator": "lt",
+					"param_value": "2018-04-02T05:36:20.319Z"
+				},
+				{
+					"param_name": "updated_at",
+					"operator": "gt",
+					"param_value": "2016-04-02T05:36:20.319Z"
+				},
+				{
+					"condition": "AND",
+					"rules": [
+						{
+							"param_name": "active_chats",
+							"operator": "lte",
+							"param_value": "12"
+						},
+						{
+							"param_name": "active_chats",
+							"operator": "gte",
+							"param_value": "1"
+						}
+					]
+				}
+			]
+		}
+    ]
+}

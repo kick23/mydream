@@ -7,15 +7,7 @@
   color: #c8c8c8!important;
   cursor: not-allowed!important;
 }
-.main-chat-cont {
-  position: fixed;
-  top: auto;
-  z-index: 9999999999;
-  max-height: 512px;
-  height: 100%;
-  width: 388px;
-  bottom: 70px;
-  right: 15px;
+
 
 }
 .open-btn {

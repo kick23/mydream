@@ -5,8 +5,6 @@
 	overflow-anchor:none;
 }
 /* hide unavailable fonts @todo - check fallbacks */
-body[data-wdt-emoji-bundle='google'] .wdt-emoji[data-has-img-google='false'], body[data-wdt-emoji-bundle='emojione'] .wdt-emoji[data-has-img-emojione='false'], body[data-wdt-emoji-bundle='google'] .wdt-emoji[data-has-img-google='false'], body[data-wdt-emoji-bundle='apple'] .wdt-emoji[data-has-img-apple='false'] {
-	display: none;
 
 }
 .wdt-emoji-picker span.emoji-outer.emoji-sizer {

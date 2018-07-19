@@ -7,16 +7,7 @@
 /* hide unavailable fonts @todo - check fallbacks */
 body[data-wdt-emoji-bundle='google'] .wdt-emoji[data-has-img-google='false'], body[data-wdt-emoji-bundle='emojione'] .wdt-emoji[data-has-img-emojione='false'], body[data-wdt-emoji-bundle='google'] .wdt-emoji[data-has-img-google='false'], body[data-wdt-emoji-bundle='apple'] .wdt-emoji[data-has-img-apple='false'] {
 	display: none;
-}
-/* picker styles */
-.wdt-emoji-picker {
 
-}
-.wdt-emoji-picker:hover {
-	cursor: pointer;
-}
-.wdt-emoji-picker-parent {
-	position: relative;
 }
 .wdt-emoji-picker span.emoji-outer.emoji-sizer {
   pointer-events: none;
